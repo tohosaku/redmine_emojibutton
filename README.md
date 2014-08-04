@@ -28,3 +28,9 @@ Usage
 
 * Use emoji codes from http://www.emoji-cheat-sheet.com
 * Insert emojis with new button in issue/wiki editor
+
+
+License
+-------
+
+*redmine_emojibutton* plugin is released under the [MIT License](LICENCE).
