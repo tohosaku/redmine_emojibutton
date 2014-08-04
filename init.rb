@@ -1,4 +1,4 @@
-require 'gemoji_plugin'
+require 'emojibutton_formatter_patch'
 
 Redmine::Plugin.register :gemoji do
   name 'Gemoji plugin'
@@ -12,7 +12,7 @@ end
 Rails.configuration.to_prepare do
   Rails.configuration.assets.paths << Emoji.images_path
 
-  unless Redmine::WikiFormatting::Textile::Formatter.included_modules.include? GemojiPlugin::Formatter::Patch
-    Redmine::WikiFormatting::Textile::Formatter.send(:include, GemojiPlugin::Formatter::Patch)
+  unless Redmine::WikiFormatting::Textile::Formatter.included_modules.include? EmojiButtonPlugin::Formatter::Patch
+    Redmine::WikiFormatting::Textile::Formatter.send(:include, EmojiButtonPlugin::Formatter::Patch)
   end
 end
