@@ -1,13 +1,12 @@
 require 'emojibutton_formatter_patch'
 require 'emojibutton_helper_patch'
 
-Redmine::Plugin.register :gemoji do
-  name 'Gemoji plugin'
-  author 'Akinori Tomita'
-  description 'Enable github style emoji'
-  version '0.0.2'
-  url 'https://github.com/tmy/redmine_gemoji'
-  author_url 'https://github.com/tmy'
+Redmine::Plugin.register :redmine_emojibutton do
+  name 'Redmine Emoji Button'
+  author 'Akinori Tomita & Tobias Fischer'
+  description "Enable github style emoji's in tickets and comments and choose emojis from a new editor button"
+  version '0.1.0'
+  url 'https://github.com/paginagmbh/redmine_emojibutton'
 end
 
 Rails.configuration.to_prepare do
