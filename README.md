@@ -3,6 +3,8 @@ Redmine Gemoji Plugin
 
 This plugin enables github style emoji notation in textile formatter and adds a new button to the wiki editor to insert emoji's more easily.
 
+*This plugin is based on a fork of the [redmine_gemoji](https://github.com/tmy/redmine_gemoji) plugin, made by [@tmy](https://github.com/tmy/) and others. Thanks! :smirk:*
+
 
 Installation
 ------------
