@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_emojibutton do
   name 'Redmine Emoji Button'
   author 'Akinori Tomita & Tobias Fischer'
   description "Enable github style emoji's in tickets and comments and choose emojis from a new editor button"
-  version '0.1.0'
+  version '0.2.0'
   url 'https://github.com/paginagmbh/redmine_emojibutton'
 end
 
