@@ -32,7 +32,7 @@ jsToolBar.prototype.elements.emoji = {
 				
 				emojiTabs = emojiTabs + '</div>';
 			});
-			emojiTabs = emojiTabs + '</div';
+			emojiTabs = emojiTabs + '</div>';
 
 
             $("#main").append(emojiDialog);
