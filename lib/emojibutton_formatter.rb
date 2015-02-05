@@ -1,18 +1,7 @@
 module EmojiButtonPlugin
   module Formatter
-    module Patch
-      def self.included(base) # :nodoc:
-        base.send(:include, EmojiButtonPlugin::Formatter)
-        base.class_eval do
-          unloadable # Send unloadable so it will not be unloaded in development
-        end
-      end
-    end
 
-    Redmine::WikiFormatting::Textile::Formatter::RULES << :inline_emoji
-
-    private
-
+    # emoji text substitution
     def inline_emoji(text)
       text.gsub!(/:([a-z0-9\+\-_]+):/) do |match|
         if Emoji.names.include?($1)
@@ -21,6 +10,8 @@ module EmojiButtonPlugin
           match
         end
       end
+      text
     end
+
   end
 end
