@@ -3,7 +3,16 @@ Redmine Gemoji Plugin
 
 This plugin enables github style emoji notation in textile formatter and adds a new button to the wiki editor to insert emoji's more easily.
 
-*This plugin is based on a fork of the [redmine_gemoji](https://github.com/tmy/redmine_gemoji) plugin, made by [@tmy](https://github.com/tmy/) and others. Thanks! :smirk:*
+*This plugin is roughly based on a fork of the [redmine_gemoji](https://github.com/tmy/redmine_gemoji) plugin, made by [@tmy](https://github.com/tmy/) and others. Thanks! :smirk:*
+
+*This plugin is listed in the [Redmine plugin directory](http://www.redmine.org/plugins/redmine_emojibutton)*
+
+
+Compatibility
+-------------
+
+The latest version supports Redmine **2.6.x** as well as **3.0**
+
 
 
 Installation
@@ -22,7 +31,11 @@ Installation
 
         $ rake emoji
 
- 4. Restart redmine
+ 4.  Run the plugin rake task to provide the assets (from the Redmine root directory):
+
+        $ rake redmine:plugins:migrate RAILS_ENV=production
+
+ 5. Restart redmine
 
 
 Usage
