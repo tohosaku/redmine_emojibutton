@@ -23,11 +23,11 @@ Installation
         $ cd /home/redmine/redmine-${version}/plugins
         $ git clone https://github.com/paginagmbh/redmine_emojibutton.git
 
- 2. Run bundler (from the plugin directory):
+ 2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
 
         $ bundle install
 
- 3. Run rake task (from the Redmine root directory):
+ 3. Run rake task (from the **Redmine root directory**, e.g. `/home/redmine/redmine-${version}`):
 
         $ rake emoji
 
