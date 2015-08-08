@@ -11,7 +11,7 @@ This plugin enables github style emoji notation in textile formatter and adds a 
 Compatibility
 -------------
 
-The latest version supports Redmine **2.6.x** as well as **3.0**
+The latest version supports Redmine **2.6.x** as well as **3.x**
 
 
 
