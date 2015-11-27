@@ -41,8 +41,32 @@ Installation
 Usage
 -----
 
-* Use emoji codes from http://www.emoji-cheat-sheet.com
 * Insert emojis with new button in issue/wiki editor
+* Use emoji codes from http://www.emoji-cheat-sheet.com
+
+
+
+Update the plugin
+-----------------
+
+ 1. Pull the changes from the repository:
+ 
+        $ cd /home/redmine/redmine-${version}/plugins/redmine_emojibutton
+        $ git pull origin master
+
+ 2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
+
+        $ bundle update
+
+ 3. Run rake task (from the **Redmine root directory**, e.g. `/home/redmine/redmine-${version}`):
+
+        $ rake emoji
+
+ 4.  Run the plugin rake task to provide the assets (from the Redmine root directory):
+
+        $ rake redmine:plugins:migrate RAILS_ENV=production
+
+ 5. Restart redmine
 
 
 License
