@@ -9,3 +9,7 @@
 #emojiTabs.ui-tabs .ui-tabs-panel {
   padding: 10px 5px 5px 5px;
 }
+
+div.wiki img.emoji {
+  vertical-align: bottom;
+}

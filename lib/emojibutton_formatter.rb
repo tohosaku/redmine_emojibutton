@@ -4,9 +4,17 @@ module EmojiButtonPlugin
     # emoji text substitution
     def inline_emoji(text)
       text.gsub!(/:([a-z0-9\+\-_]+):/) do |match|
-        if Emoji.names.include?($1)
-          '<img alt="' + $1 + '" height="20" src="'+ Setting.protocol + "://" + Setting.host_name + '/images/emoji/' + $1 + '.png" style="vertical-align:middle" width="20" title=":' + $1 + ':" class="emoji" />'
+        index = Gemojione::Index.new
+        if index.find_by_name($1)
+          #Rails.logger.info 'aa-' + $1
+          #Rails.logger.info 'aa-' + Gemojione.replace_named_moji_with_images(match)
+          Gemojione.replace_named_moji_with_images(match)
+        elsif index.find_by_ascii($1)
+          #Rails.logger.info 'bb-' + $1
+          #Rails.logger.info 'bb-' + Gemojione.replace_ascii_moji_with_images(match)
+          Gemojione.replace_ascii_moji_with_images(match)
         else
+          #Rails.logger.info 'cc' + $1
           match
         end
       end

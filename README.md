@@ -19,21 +19,21 @@ Installation
 ------------
 
  1. Copy the plugin directory into the `plugins` directory, for example:
- 
-        $ cd /home/redmine/redmine-${version}/plugins
+
+        $ cd /var/www/redmine/plugins
         $ git clone https://github.com/paginagmbh/redmine_emojibutton.git
 
- 2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
+ 2. Run bundler (from the **plugin directory**, e.g. `/var/www/redmine/plugins/redmine_emojibutton`):
 
         $ bundle install
 
- 3. Run rake task (from the **Redmine root directory**, e.g. `/home/redmine/redmine-${version}`):
+ 3. Run rake task (from the **Redmine root directory**, e.g. `/var/www/redmine/`):
 
-        $ rake emoji
+        $ rake gemojione:install_assets TARGET=public/images/gemoji/
 
  4.  Run the plugin rake task to provide the assets (from the Redmine root directory):
 
-        $ rake redmine:plugins:migrate RAILS_ENV=production
+        $ rake redmine:plugins NAME=redmine_emojibutton RAILS_ENV=production
 
  5. Restart redmine
 
@@ -50,21 +50,21 @@ Update the plugin
 -----------------
 
  1. Pull the changes from the repository:
- 
-        $ cd /home/redmine/redmine-${version}/plugins/redmine_emojibutton
+
+        $ cd /var/www/redmine/plugins/redmine_emojibutton
         $ git pull origin master
 
- 2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
+ 2. Run bundler (from the **plugin directory**, e.g. `/var/www/redmine/plugins/redmine_emojibutton`):
 
         $ bundle update
 
- 3. Run rake task (from the **Redmine root directory**, e.g. `/home/redmine/redmine-${version}`):
+ 3. Run rake task (from the **Redmine root directory**, e.g. `/var/www/redmine`):
 
-        $ rake emoji
+        $ rake gemojione:install_assets TARGET=public/images/gemoji/
 
  4.  Run the plugin rake task to provide the assets (from the Redmine root directory):
 
-        $ rake redmine:plugins:migrate RAILS_ENV=production
+        $ rake redmine:plugins NAME=redmine_emojibutton RAILS_ENV=production
 
  5. Restart redmine
 
