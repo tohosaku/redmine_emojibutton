@@ -13,7 +13,6 @@ Redmine::Plugin.register :redmine_emojibutton do
 end
 
 Rails.configuration.to_prepare do
-  Rails.configuration.assets.paths << Emoji.images_path
 
   # send Emoji Patches to all wiki formatters available to be able to switch formatter without app restart
   Redmine::WikiFormatting::format_names.each do |format|

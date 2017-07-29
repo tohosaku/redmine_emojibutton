@@ -8,4 +8,18 @@
 
 #emojiTabs.ui-tabs .ui-tabs-panel {
   padding: 10px 5px 5px 5px;
+  font-size: 1.57em;
+}
+
+#emojiTabs.ui-tabs .ui-tabs-nav {
+  font-size: 0.861em;
+}
+
+#emojiTabs.ui-tabs span.gemoji {
+  padding: 3px;
+  cursor: pointer;
+}
+
+span.emoji {
+  font-size: 1.3em;
 }

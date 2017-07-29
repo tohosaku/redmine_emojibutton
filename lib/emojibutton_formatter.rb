@@ -4,8 +4,8 @@ module EmojiButtonPlugin
     # emoji text substitution
     def inline_emoji(text)
       text.gsub!(/:([a-z0-9\+\-_]+):/) do |match|
-        if Emoji.names.include?($1)
-          '<img alt="' + $1 + '" height="20" src="'+ Setting.protocol + "://" + Setting.host_name + '/images/emoji/' + $1 + '.png" style="vertical-align:middle" width="20" title=":' + $1 + ':" class="emoji" />'
+        if emoji = Emoji.find_by_alias($1)
+          %(<span alt="#$1" title=":#$1:" class="emoji">#{emoji.raw}</span>)
         else
           match
         end
