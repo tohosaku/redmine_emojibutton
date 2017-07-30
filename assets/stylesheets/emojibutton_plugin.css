@@ -15,11 +15,13 @@
   font-size: 0.861em;
 }
 
-#emojiTabs.ui-tabs span.gemoji {
-  padding: 3px;
-  cursor: pointer;
+span.emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+  font-size: 1.3em;
 }
 
-span.emoji {
-  font-size: 1.3em;
+#emojiTabs.ui-tabs span.emoji {
+  font-size: 1em;
+  padding: 3px;
+  cursor: pointer;
 }

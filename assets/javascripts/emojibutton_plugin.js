@@ -53,7 +53,7 @@ jsToolBar.prototype.elements.emoji = {
 
             emojiTab.append(
               $(document.createElement('span'))
-                .addClass('gemoji')
+                .addClass('emoji')
                 .attr('title', aliases +' ('+ description +')')
                 .attr('alt', description)
                 .attr('data-code', code)
