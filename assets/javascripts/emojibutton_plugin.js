@@ -1,6 +1,12 @@
 $(document).ready(function() {
   $("textarea.wiki-edit").emojioneArea({
-    template: "<filters/><tabs/><editor/>"
+    template: "<filters/><tabs/><editor/>",
+    shortnames: true,
+    saveEmojisAs: 'shortname',
+    textcomplete: {
+      maxCount  : 7,
+      placement : null
+    }
   });
 });
 
