@@ -18,24 +18,20 @@ The latest version supports Redmine **2.6.x** as well as **3.x** and **4.x**
 Installation
 ------------
 
- 1. Copy the plugin directory into the `plugins` directory, for example:
- 
+1. Copy the plugin directory into the `plugins` directory, for example:
+
         $ cd /home/redmine/redmine-${version}/plugins
         $ git clone https://github.com/paginagmbh/redmine_emojibutton.git
 
- 2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
+2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
 
         $ bundle install
 
- 3. Run rake task (from the **Redmine root directory**, e.g. `/home/redmine/redmine-${version}`):
-
-        $ rake emoji
-
- 4.  Run the plugin rake task to provide the assets (from the Redmine root directory):
+3.  Run the plugin rake task to provide the assets (from the Redmine root directory):
 
         $ rake redmine:plugins:migrate RAILS_ENV=production
 
- 5. Restart redmine
+4. Restart redmine
 
 
 Usage
@@ -49,24 +45,20 @@ Usage
 Update the plugin
 -----------------
 
- 1. Pull the changes from the repository:
- 
+1. Pull the changes from the repository:
+
         $ cd /home/redmine/redmine-${version}/plugins/redmine_emojibutton
         $ git pull origin master
 
- 2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
+2. Run bundler (from the **plugin directory**, e.g. `/home/redmine/redmine-${version}/plugins/redmine_emojibutton`):
 
         $ bundle update
 
- 3. Run rake task (from the **Redmine root directory**, e.g. `/home/redmine/redmine-${version}`):
-
-        $ rake emoji
-
- 4.  Run the plugin rake task to provide the assets (from the Redmine root directory):
+3.  Run the plugin rake task to provide the assets (from the Redmine root directory):
 
         $ rake redmine:plugins:migrate RAILS_ENV=production
 
- 5. Restart redmine
+4. Restart redmine
 
 
 License
