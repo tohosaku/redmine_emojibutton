@@ -1,14 +1,8 @@
-/* read gemoji.json and cache in localStorage
- * JSON file taken from https://github.com/wooorm/gemoji
- */
-var gemoji = JSON.parse(localStorage.getItem('gemoji'));
-if (!gemoji) $.getJSON(redmineSettingsFullHostname+'/plugin_assets/redmine_emojibutton/javascripts/gemoji.json', function (data) {
-  localStorage.setItem('gemoji', JSON.stringify(data));
+$(document).ready(function() {
+  $("textarea.wiki-edit").emojioneArea({
+    template: "<filters/><tabs/><editor/>"
+  });
 });
-gemoji = JSON.parse(localStorage.getItem('gemoji'));
-
-// hard-code the different emoji groups
-var emojiGroups = ["People", "Nature", "Foods", "Activity", "Places", "Objects", "Symbols", "Flags"];
 
 // add texteditor button with action
 jsToolBar.prototype.elements.emoji = {

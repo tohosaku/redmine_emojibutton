@@ -41,8 +41,9 @@ module EmojiButtonPlugin
 
         unless @heads_for_wiki_redmine_emojibutton_included
           content_for :header_tags do
-            o = javascript_tag("redmineSettingsFullHostname = '" + Setting.protocol + "://" + Setting.host_name + "';")
+            o = javascript_include_tag('emojionearea.min.js', :plugin => 'redmine_emojibutton')
             o << javascript_include_tag('emojibutton_plugin.js', :plugin => 'redmine_emojibutton')
+            o << stylesheet_link_tag('emojionearea.min.css', :plugin => 'redmine_emojibutton')
             o << stylesheet_link_tag('emojibutton_plugin.css', :plugin => 'redmine_emojibutton')
             o.html_safe
           end
