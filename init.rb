@@ -7,7 +7,7 @@ Redmine::Plugin.register :redmine_emojibutton do
   name 'Redmine Emoji Button'
   author 'Tobias Fischer'
   description "Enable github style emoji's in tickets and comments and choose emojis from a new editor button"
-  version '0.4.1'
+  version '0.5.0'
   url 'https://github.com/paginagmbh/redmine_emojibutton'
   author_url 'https://github.com/tofi86'
 end
@@ -27,7 +27,7 @@ Rails.configuration.to_prepare do
         Redmine::WikiFormatting::Textile::Formatter.send(:include, EmojiButtonPlugin::Formatter::Textile::Patch)
       end
     end
-    
+
     unless Redmine::WikiFormatting::helper_for(format).included_modules.include? EmojiButtonPlugin::Helper::Patch
      Redmine::WikiFormatting::helper_for(format).send(:include, EmojiButtonPlugin::Helper::Patch)
     end
