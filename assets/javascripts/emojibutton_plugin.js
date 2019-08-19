@@ -1,14 +1,17 @@
 /* read gemoji.json and cache in localStorage
  * JSON file taken from https://github.com/wooorm/gemoji
  */
-var gemoji = JSON.parse(localStorage.getItem('gemoji'));
-if (!gemoji) $.getJSON(redmineSettingsFullHostname+'/plugin_assets/redmine_emojibutton/javascripts/gemoji.json', function (data) {
-  localStorage.setItem('gemoji', JSON.stringify(data));
+var gemoji_version = '4.0.0';
+var max_unicode_version = 11.0;
+
+var gemoji = JSON.parse(localStorage.getItem('gemoji' + gemoji_version));
+if (!gemoji) $.getJSON(redmineSettingsFullHostname+'/plugin_assets/redmine_emojibutton/javascripts/emoji.json', function (data) {
+  localStorage.setItem('gemoji' + gemoji_version, JSON.stringify(data));
 });
-gemoji = JSON.parse(localStorage.getItem('gemoji'));
+gemoji = JSON.parse(localStorage.getItem('gemoji' + gemoji_version));
 
 // hard-code the different emoji groups
-var emojiGroups = ["People", "Nature", "Foods", "Activity", "Places", "Objects", "Symbols", "Flags"];
+var emojiGroups = ["Smileys & Emotion", "People & Body", "Animals & Nature", "Food & Drink", "Activities", "Travel & Places", "Objects", "Symbols", "Flags"];
 
 // add texteditor button with action
 jsToolBar.prototype.elements.emoji = {
@@ -43,22 +46,25 @@ jsToolBar.prototype.elements.emoji = {
       // create emoji modal tab boards
       jQuery.each( emojiGroups, function( i, group ) {
         var emojiTab = $(document.createElement('div')).attr('id','tabs-'+(i+1));
-        var emojiGroup = group.toLowerCase();
 
-        jQuery.each( gemoji, function( emoji, emojiObject ) {
-          if(emojiObject.category == emojiGroup) {
-            var code = emojiObject.names[0];
+        jQuery.each( gemoji, function( j, emojiObject ) {
+          if(emojiObject.category == group) {
+            var emoji = emojiObject.emoji;
+            var code = emojiObject.aliases[0];
             var description = emojiObject.description;
-            var aliases = emojiObject.names.map(function(n){ return ':'+n+':' }).join(' / ');
+            var aliases = emojiObject.aliases.map(function(n){ return ':'+n+':' }).join(' / ');
+            var unicode_version = emojiObject.unicode_version;
 
-            emojiTab.append(
-              $(document.createElement('span'))
-                .addClass('emoji')
-                .attr('title', aliases +' ('+ description +')')
-                .attr('alt', description)
-                .attr('data-code', code)
-                .html(emoji)
-              );
+            if(unicode_version <= max_unicode_version) {
+              emojiTab.append(
+                $(document.createElement('span'))
+                  .addClass('emoji')
+                  .attr('title', aliases +' ('+ description +')')
+                  .attr('alt', description)
+                  .attr('data-code', code)
+                  .html(emoji)
+                );
+            }
           }
         });
         emojiTabContainer.append(emojiTab);

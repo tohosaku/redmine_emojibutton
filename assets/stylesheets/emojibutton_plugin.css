@@ -24,4 +24,5 @@ span.emoji {
   font-size: 1em;
   padding: 3px;
   cursor: pointer;
+  display: inline-block;
 }
