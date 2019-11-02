@@ -11,7 +11,9 @@ This plugin enables github style emoji notation in textile formatter and adds a 
 Compatibility
 -------------
 
-The latest version supports Redmine **2.6.x** as well as **3.x** and **4.x**
+The `master` supports Redmine **2.6.x** as well as **3.x** and **4.x**.
+
+**PLEASE NOTE:** The `master` branch uses images to display emojis and therefore has a consistent display across all operating systems. The downside, however, is that there is no support for *latest* Unicode 10+ emojis – and will never be! If you want to use the latest Unicode emojis displayed in the operating systems default emoji font please use the pre-release version v0.6.0 from the `gemoji-4.0-native-emojis-no-images` branch. It uses the `gemoji` gem and displays emojis as native Unicode emojis.
 
 
 
@@ -19,7 +21,7 @@ Installation
 ------------
 
  1. Copy the plugin directory into the `plugins` directory, for example:
- 
+
         $ cd /home/redmine/redmine-${version}/plugins
         $ git clone https://github.com/paginagmbh/redmine_emojibutton.git
 
@@ -50,7 +52,7 @@ Update the plugin
 -----------------
 
  1. Pull the changes from the repository:
- 
+
         $ cd /home/redmine/redmine-${version}/plugins/redmine_emojibutton
         $ git pull origin master
 
