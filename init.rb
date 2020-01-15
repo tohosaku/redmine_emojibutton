@@ -11,6 +11,10 @@ Redmine::Plugin.register :redmine_emojibutton do
   url 'https://github.com/paginagmbh/redmine_emojibutton'
   author_url 'https://github.com/tofi86'
   requires_redmine :version_or_higher => '3.0'
+
+  settings :default => {
+    'max_unicode_version' => '12.1'
+  }, :partial => 'redmine_emojibutton_settings'
 end
 
 Rails.configuration.to_prepare do

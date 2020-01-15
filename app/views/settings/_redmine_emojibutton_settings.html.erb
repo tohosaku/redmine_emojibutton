@@ -1,0 +1,4 @@
+<p>
+  <label><%= l(:settings_max_unicode_version) %>:</label>
+  <%= select_tag "settings[max_unicode_version]", options_for_select(["3.0", "3.2", "4.0", "4.1", "5.1", "5.2", "6.0", "6.1", "7.0", "8.0", "9.0", "11.0", "12.0", "12.1"], @settings['max_unicode_version']), include_blank: false %>
+</p>
