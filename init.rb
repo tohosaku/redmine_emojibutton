@@ -6,8 +6,8 @@ require 'emojibutton_helper_patch'
 Redmine::Plugin.register :redmine_emojibutton do
   name 'Redmine Emoji Button'
   author 'Tobias Fischer'
-  description "Enable github style emoji's in tickets and comments and choose emojis from a new editor button"
-  version '0.6.0'
+  description "Enable GitHub style emoji's in tickets and comments and choose emojis from a new editor button"
+  version '0.6.1'
   url 'https://github.com/paginagmbh/redmine_emojibutton'
   author_url 'https://github.com/tofi86'
   requires_redmine :version_or_higher => '3.0'
