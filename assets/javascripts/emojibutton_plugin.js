@@ -1,8 +1,8 @@
 /* read gemoji.json and cache in localStorage
  * JSON file taken from https://github.com/wooorm/gemoji
  */
-var gemoji_version = '4.0.0';
-var max_unicode_version = 11.0;
+var gemoji_version = '4.0.0.rc1';
+var max_unicode_version = 12.1;
 
 var gemoji = JSON.parse(localStorage.getItem('gemoji' + gemoji_version));
 if (!gemoji) $.getJSON(redmineSettingsFullHostname+'/plugin_assets/redmine_emojibutton/javascripts/emoji.json', function (data) {
