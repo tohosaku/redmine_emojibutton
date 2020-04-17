@@ -13,7 +13,7 @@ Redmine::Plugin.register :redmine_emojibutton do
   requires_redmine :version_or_higher => '3.0'
 
   settings :default => {
-    'max_unicode_version' => '12.1'
+    'max_unicode_version' => '13.0'
   }, :partial => 'redmine_emojibutton_settings'
 end
 
