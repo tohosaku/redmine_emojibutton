@@ -18,8 +18,6 @@
 module EmojiButtonPlugin
   module Helper
     module Patch
-      private
-
       def heads_for_wiki_formatter
         super
         return if ie6_or_ie7?
@@ -44,6 +42,8 @@ module EmojiButtonPlugin
           @heads_for_wiki_redmine_emojibutton_included = true
         end
       end
+
+      private
 
       def ie6_or_ie7?
         useragent = request.env['HTTP_USER_AGENT'].to_s
